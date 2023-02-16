@@ -77,7 +77,7 @@ function UserInfo() {
                 >
                   <option value="">select role</option>
                   <option value="ADMIN">Administrator</option>
-                  <option value="">Regular user</option>
+                  <option value="DEV">Regular user</option>
                 </select>
               </div>
             </div>

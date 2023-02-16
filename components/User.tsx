@@ -13,6 +13,8 @@ function User({ first_name, last_name, role }: User) {
   useEffect(() => {
     if (role == "ADMIN") {
       setRoleState("Administrator");
+    } else {
+      setRoleState("Regular user");
     }
   }, []);
   return (
