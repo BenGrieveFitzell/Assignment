@@ -1,12 +1,12 @@
 import Sidebar from "../components/Sidebar";
 import "tailwindcss/tailwind.css";
-import User from "./AddUser/User";
-import UserFunctions from "./AddUser/UserFunctions";
+import User from "../components/User";
+import UserFunctions from "../components/UserFunctions";
 
 const IndexPage = ({ data }) => (
   <div className="h-screen bg-gray-100 flex">
     <Sidebar />
-    <div className="w-full m-20 px-10">
+    <div className="w-full ml-[140px] mt-[50px] px-10">
       <h1 className="text-3xl font-semibold">Our Users</h1>
       <UserFunctions data={data} />
     </div>

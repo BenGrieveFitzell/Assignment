@@ -6,11 +6,6 @@ import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 
 function UserInfo() {
-  const [clickedName, setClickedName] = useState(false);
-  const [clickedLastname, setClickedLastname] = useState(false);
-  const [clickedEmail, setClickedEmail] = useState(false);
-  const [clickedRole, setClickedRole] = useState(false);
-
   const router = useRouter();
   function goBack() {
     router.back();
@@ -43,16 +38,16 @@ function UserInfo() {
   return (
     <div>
       <div className="my-5 bg-white rounded-lg p-4 flex items-center justify-between">
-        <div className="flex items-center space-x-[60px]">
+        <div className="flex items-center space-x-[60px] ">
           <BsFillArrowLeftCircleFill
-            className="h-8 w-8 text-yellow-500"
+            className="h-8 w-8 text-[#DCA97C] cursor-pointer"
             onClick={goBack}
           />
           <h2 className="font-semibold text-xl">Add new user</h2>
         </div>
         <button
           onClick={createUser}
-          className="bg-green-500 text-gray-100 font-medium rounded-md p-2"
+          className="bg-[#52D8B1] text-gray-100 font-medium rounded-md p-2"
         >
           save and add
         </button>
@@ -61,21 +56,12 @@ function UserInfo() {
         <h2 className="text-xl font-medium">User information</h2>
         <div className="grid grid-cols-3 space-x-4">
           <div className="grid space-y-10">
-            <div
-              onClick={() => {
-                setClickedName(!clickedName);
-                setClickedLastname(false);
-                setClickedRole(false);
-                setClickedEmail(false);
-              }}
-            >
+            <div>
               <h3 className="text-gray-400 font-medium">FIRST NAME</h3>
-              <div className="border w-[200px]">
+              <div className="border w-[200px] hover:shadow-md">
                 <input
                   placeholder="insert first name"
-                  className={`p-2 outline-none ${
-                    clickedName ? "shadow-xl" : "shadow-none"
-                  }`}
+                  className="p-2 outline-none"
                   value={first_name}
                   onChange={(e) => setFirst_name(e.target.value)}
                 />
@@ -83,19 +69,11 @@ function UserInfo() {
             </div>
             <div>
               <h3 className="text-gray-400 font-medium">ROLE</h3>
-              <div className="text-gray-400 border w-[200px]">
+              <div className="text-gray-400 border w-[200px] hover:shadow-md">
                 <select
-                  className={`p-2 outline-none w-[180px] ${
-                    clickedRole ? "shadow-xl" : "shadow-none"
-                  }`}
+                  className="p-2 outline-none w-[180px] "
                   value={role}
                   onChange={(e) => setRole(e.target.value)}
-                  onClick={() => {
-                    setClickedRole(!clickedRole);
-                    setClickedName(false);
-                    setClickedEmail(false);
-                    setClickedLastname(false);
-                  }}
                 >
                   <option value="">select role</option>
                   <option value="ADMIN">Administrator</option>
@@ -108,34 +86,18 @@ function UserInfo() {
             <h3 className="text-gray-400 font-medium">LAST NAME</h3>
             <input
               placeholder="insert last name"
-              className={`p-2 outline-none border ${
-                clickedLastname ? "shadow-xl" : "shadow-none"
-              }`}
+              className="p-2 outline-none border hover:shadow-md"
               value={last_name}
               onChange={(e) => setLast_name(e.target.value)}
-              onClick={() => {
-                setClickedLastname(!clickedLastname);
-                setClickedName(false);
-                setClickedEmail(false);
-                setClickedRole(false);
-              }}
             />
           </div>
           <div>
             <h3 className="text-gray-400 font-medium">EMAIL</h3>
             <input
               placeholder="insert email address"
-              className={`p-2 outline-none border ${
-                clickedEmail ? "shadow-xl" : "shadow-none"
-              }`}
+              className="p-2 outline-none border hover:shadow-md"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              onClick={() => {
-                setClickedEmail(!clickedEmail);
-                setClickedLastname(false);
-                setClickedName(false);
-                setClickedRole(false);
-              }}
             />
           </div>
         </div>
